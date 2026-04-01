@@ -7,8 +7,8 @@ ARCH=$(uname -m)
 echo "Installing package dependencies..."
 echo "---------------------------------------------------------------"
 pacman -Syu --noconfirm \
+    cargo          \
     python         \
-    vkrunner       \
     vulkan-headers
 
 echo "Installing debloated packages..."
@@ -17,6 +17,7 @@ get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
 make-aur-package waffle
+make-aur-package vkrunner-git
 make-aur-package piglit-git
 
 # If the application needs to be manually built that has to be done down here
