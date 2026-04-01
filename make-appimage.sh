@@ -8,14 +8,12 @@ export ARCH VERSION
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.bg.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
-export DESKTOP=DUMMY
-export MAIN_BIN=piglit
 export DEPLOY_SYS_PYTHON=1
 export DEPLOY_OPENGL=1
 export DEPLOY_VULKAN=1
 
 # Deploy dependencies
-quick-sharun /usr/bin/piglit /usr/lib/piglit/*.so* /usr/lib/libpig*.so* /usr/lib/libhiz-util.so
+quick-sharun /usr/bin/piglit /usr/lib/piglit/*.so* /usr/lib/libpig*.so* /usr/lib/libpiglitglxutil.so /usr/lib/libhiz-util.so
 
 # Additional changes can be done in between here
 
